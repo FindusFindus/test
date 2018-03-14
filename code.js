@@ -1,4 +1,4 @@
-var $ = require("jQuery");
+var $ = require("jquery");
 
 function renderMovie(movieData) {
     document.getElementById("movietitle").innerText = movieData.Title;
