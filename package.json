@@ -10,15 +10,18 @@
     "copyindex": "cp index.html dist/index.html",
     "build": "npm run bundle && npm run styles && npm run copyindex",
     "lintless": "stylelint style.less",
-    "lintjs": "eslint .",
-    "lint": "npm run lintjs && npm run lintless"
+    "lintts": "tslint -c tslint.json '*.ts'",
+    "lint": "npm run lintts && npm run lintless"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^4.18.2",
+    "@types/jquery": "^3.3.1",
     "less": "^3.0.1",
     "stylelint": "^9.1.2",
+    "ts-loader": "^4.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-dev-server": "^3.1.1",

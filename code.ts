@@ -1,10 +1,11 @@
-var $ = require("jquery");
+import * as $ from "jquery";
+import { Review } from "./interfaces";
 
-function renderMovie(movieData) {
+function renderMovie(movieData: Review) {
     document.getElementById("movietitle").innerText = movieData.Title;
     document.getElementById("moviedescription").innerText = movieData.Description;
     document.getElementById("poster").setAttribute("src", movieData.Poster);
-    //  document.getElementById("actors").innerHTML = movieData.Actors;
+
     let actorHtml = "";
     movieData.Actors.forEach(actor => {
         actorHtml = actorHtml + "<li>" + actor + "</li>";
@@ -12,12 +13,12 @@ function renderMovie(movieData) {
     });
     document.getElementById("actors").innerHTML = actorHtml;
 } 
-let movieData = require("./data")   
+import {movieData} from "./data";  
 renderMovie(movieData);
 
 function changeStarRating(grade) {
     let currentlyFilledStars = document.querySelectorAll(".filledStar");
-    currentlyFilledStars.forEach(element => {
+    Array.from(currentlyFilledStars).forEach(element => {
         element.className = "emptyStar";
     });
     
